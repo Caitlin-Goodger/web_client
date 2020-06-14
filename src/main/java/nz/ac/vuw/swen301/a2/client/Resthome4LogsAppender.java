@@ -5,6 +5,8 @@ import org.apache.log4j.spi.LoggingEvent;
 
 public class Resthome4LogsAppender extends AppenderSkeleton {
 
+    private String logServiceURL = "http://localhost:8080/resthome4logs/logs";
+
 
     public Resthome4LogsAppender() {
 
@@ -14,6 +16,15 @@ public class Resthome4LogsAppender extends AppenderSkeleton {
     protected void append(LoggingEvent event) {
 
     }
+
+    private String getLogServiceURL() {
+        return logServiceURL;
+    }
+
+    private void setLogServiceURL(String logurl) {
+        logServiceURL = logurl;
+    }
+
 
     @Override
     public void close() {
