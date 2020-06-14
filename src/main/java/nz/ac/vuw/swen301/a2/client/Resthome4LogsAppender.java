@@ -4,7 +4,13 @@ import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.LoggingEvent;
 import org.json.JSONObject;
 
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.HttpClientBuilder;
+
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Resthome4LogsAppender extends AppenderSkeleton {
 
@@ -23,11 +29,31 @@ public class Resthome4LogsAppender extends AppenderSkeleton {
             logs.remove(maxSize);
             discardCount++;
         }
+        logs.add(event);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("id", UUID.randomUUID());
+        jsonObject.put("level", event.getLevel().toString());
+        jsonObject.put("timestamp", event.getTimeStamp());
+        jsonObject.put("thread",event.getThreadName());
+        jsonObject.put("message", event.getMessage());
 
+        String jsonString = jsonObject.toString();
 
+        try {
 
+            HttpClient httpClient = HttpClientBuilder.create().build();
+            HttpPost request = new HttpPost(logServiceURL);
+            request.setEntity(new StringEntity(jsonString));
+            request.setHeader("Accept", "application/json");
+            request.setHeader("Content-type", "application/json");
+            httpClient.execute(request);
+        } catch (Exception e ) {
+
+        }
 
     }
+
+
 
     public String getLogServiceURL() {
         return logServiceURL;
