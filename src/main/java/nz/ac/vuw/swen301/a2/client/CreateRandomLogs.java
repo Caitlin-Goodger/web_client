@@ -20,12 +20,12 @@ public class CreateRandomLogs {
                 Level level = getRandomLevel();
                 String message = messages[((int) (Math.random() * messageLength))];
                 String id = UUID.randomUUID().toString();
-                LoggingEvent loggingEvent = new LoggingEvent(id,logger,level,message,null);
+                LoggingEvent loggingEvent = new LoggingEvent("",logger,level,message,null);
                 appender.append(loggingEvent);
                 Thread.sleep(1000);
             }
         } catch (InterruptedException e) {
-
+            System.out.println("Time Exception");
         }
 
     }

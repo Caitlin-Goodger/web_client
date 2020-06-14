@@ -31,7 +31,7 @@ public class Resthome4LogsAppender extends AppenderSkeleton {
         }
         logs.add(event);
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("id", event.getLevel().toString());
+        jsonObject.put("id", UUID.randomUUID().toString());
         jsonObject.put("level", event.getLevel().toString());
         jsonObject.put("timestamp", event.getTimeStamp());
         jsonObject.put("thread",event.getThreadName());
@@ -47,8 +47,9 @@ public class Resthome4LogsAppender extends AppenderSkeleton {
             request.setHeader("Accept", "application/json");
             request.setHeader("Content-type", "application/json");
             httpClient.execute(request);
+            System.out.println(jsonString);
         } catch (Exception e ) {
-
+            System.out.println("Exception");
         }
 
     }
