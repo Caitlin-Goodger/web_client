@@ -25,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/nz/ac/vuw/swen301/a2/client/Resthome4LogsAppender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+            <state relative-caret-position="496">
+              <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#424#425#0" expanded="true" />
@@ -37,6 +37,10 @@
                 <element signature="e#639#640#0" expanded="true" />
                 <element signature="e#691#692#0" expanded="true" />
                 <element signature="e#713#714#0" expanded="true" />
+                <element signature="e#800#801#0" expanded="true" />
+                <element signature="e#821#822#0" expanded="true" />
+                <element signature="e#887#888#0" expanded="true" />
+                <element signature="e#914#915#0" expanded="true" />
                 <element signature="e#363#364#0" expanded="true" />
                 <element signature="e#391#392#0" expanded="true" />
               </folding>
@@ -132,7 +136,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1592101032928" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1592101251412" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -158,12 +162,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592097873908</updated>
-      <workItem from="1592097877775" duration="3144000" />
+      <workItem from="1592097877775" duration="3362000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3144000" />
+    <option name="totallyTimeSpent" value="3362000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
@@ -225,8 +229,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nz/ac/vuw/swen301/a2/client/Resthome4LogsAppender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+        <state relative-caret-position="496">
+          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#424#425#0" expanded="true" />
@@ -237,6 +241,10 @@
             <element signature="e#639#640#0" expanded="true" />
             <element signature="e#691#692#0" expanded="true" />
             <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#914#915#0" expanded="true" />
             <element signature="e#363#364#0" expanded="true" />
             <element signature="e#391#392#0" expanded="true" />
           </folding>

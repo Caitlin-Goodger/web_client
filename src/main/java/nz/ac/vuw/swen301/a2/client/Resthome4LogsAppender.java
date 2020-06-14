@@ -7,6 +7,7 @@ public class Resthome4LogsAppender extends AppenderSkeleton {
 
     private String logServiceURL = "http://localhost:8080/resthome4logs/logs";
     private int maxSize = 1000;
+    private long discardCount = 0;
 
     public Resthome4LogsAppender() {
 
@@ -17,20 +18,28 @@ public class Resthome4LogsAppender extends AppenderSkeleton {
 
     }
 
-    private String getLogServiceURL() {
+    public String getLogServiceURL() {
         return logServiceURL;
     }
 
-    private void setLogServiceURL(String logurl) {
+    public void setLogServiceURL(String logurl) {
         logServiceURL = logurl;
     }
 
-    private int getMaxSize() {
+    public int getMaxSize() {
         return maxSize;
     }
 
-    private void setMaxSize( int newMaxSize) {
+    public void setMaxSize( int newMaxSize) {
         maxSize = newMaxSize;
+    }
+
+    public long getDiscardCount() {
+        return discardCount;
+    }
+
+    public void setDiscardCount(long newDiscardCount) {
+        discardCount = newDiscardCount;
     }
 
     @Override
