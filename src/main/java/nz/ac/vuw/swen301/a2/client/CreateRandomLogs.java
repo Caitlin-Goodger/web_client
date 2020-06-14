@@ -5,6 +5,9 @@ import java.lang.Math.*;
 
 public class CreateRandomLogs {
 
+    private static String[] messages = {"message", "MESSAGE", "the message", "Another message"};
+    private static int messageLength = messages.length;
+
 
     private Level getRandomLevel() {
         int randomNumber = (int) (Math.random()*8);
