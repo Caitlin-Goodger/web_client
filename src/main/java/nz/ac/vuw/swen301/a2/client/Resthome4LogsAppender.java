@@ -31,7 +31,7 @@ public class Resthome4LogsAppender extends AppenderSkeleton {
         }
         logs.add(event);
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("id", UUID.randomUUID());
+        jsonObject.put("id", event.getLevel().toString());
         jsonObject.put("level", event.getLevel().toString());
         jsonObject.put("timestamp", event.getTimeStamp());
         jsonObject.put("thread",event.getThreadName());

@@ -1,7 +1,10 @@
 package nz.ac.vuw.swen301.a2.client;
 
 import org.apache.log4j.*;
+import org.apache.log4j.spi.LoggingEvent;
+
 import java.lang.Math.*;
+import java.util.UUID;
 
 public class CreateRandomLogs {
 
@@ -11,10 +14,14 @@ public class CreateRandomLogs {
     public static void main (String[] args) {
         Resthome4LogsAppender appender = new Resthome4LogsAppender();
         Logger logger = Logger.getLogger(CreateRandomLogs.class);
-        logger.addAppender(appender);
+        //logger.addAppender(appender);
         try {
             while (true) {
-                logger.log(getRandomLevel(), messages[((int) (Math.random() * messageLength))]);
+                Level level = getRandomLevel();
+                String message = messages[((int) (Math.random() * messageLength))];
+                String id = UUID.randomUUID().toString();
+                LoggingEvent loggingEvent = new LoggingEvent(id,logger,level,message,null);
+                appender.append(loggingEvent);
                 Thread.sleep(1000);
             }
         } catch (InterruptedException e) {
