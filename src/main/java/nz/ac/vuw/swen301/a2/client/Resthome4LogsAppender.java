@@ -6,7 +6,7 @@ import org.apache.log4j.spi.LoggingEvent;
 public class Resthome4LogsAppender extends AppenderSkeleton {
 
     private String logServiceURL = "http://localhost:8080/resthome4logs/logs";
-
+    private int maxSize = 1000;
 
     public Resthome4LogsAppender() {
 
@@ -25,6 +25,13 @@ public class Resthome4LogsAppender extends AppenderSkeleton {
         logServiceURL = logurl;
     }
 
+    private int getMaxSize() {
+        return maxSize;
+    }
+
+    private void setMaxSize( int newMaxSize) {
+        maxSize = newMaxSize;
+    }
 
     @Override
     public void close() {
