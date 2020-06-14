@@ -2,12 +2,16 @@ package nz.ac.vuw.swen301.a2.client;
 
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.LoggingEvent;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class Resthome4LogsAppender extends AppenderSkeleton {
 
     private String logServiceURL = "http://localhost:8080/resthome4logs/logs";
     private int maxSize = 1000;
     private long discardCount = 0;
+    ArrayList<LoggingEvent> logs = new ArrayList();
 
     public Resthome4LogsAppender() {
 
@@ -15,6 +19,13 @@ public class Resthome4LogsAppender extends AppenderSkeleton {
 
     @Override
     protected void append(LoggingEvent event) {
+        if(logs.size() > maxSize) {
+            logs.remove(maxSize);
+            discardCount++;
+        }
+
+
+
 
     }
 

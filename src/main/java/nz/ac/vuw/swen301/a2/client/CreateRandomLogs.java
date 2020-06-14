@@ -8,8 +8,23 @@ public class CreateRandomLogs {
     private static String[] messages = {"message", "MESSAGE", "the message", "Another message"};
     private static int messageLength = messages.length;
 
+    public static void main (String[] args) {
+        Resthome4LogsAppender appender = new Resthome4LogsAppender();
+        Logger logger = Logger.getLogger(CreateRandomLogs.class);
+        logger.addAppender(appender);
+        try {
+            while (true) {
+                logger.log(getRandomLevel(), messages[((int) (Math.random() * messageLength))]);
+                Thread.sleep(1000);
+            }
+        } catch (InterruptedException e) {
 
-    private Level getRandomLevel() {
+        }
+
+    }
+
+
+    private static Level getRandomLevel() {
         int randomNumber = (int) (Math.random()*8);
 
         if(randomNumber == 1) {
