@@ -9,6 +9,9 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 
+import javax.servlet.http.HttpServletResponse;
+import java.time.Instant;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -33,9 +36,10 @@ public class Resthome4LogsAppender extends AppenderSkeleton {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("id", UUID.randomUUID().toString());
         jsonObject.put("level", event.getLevel().toString());
-        jsonObject.put("timestamp", event.getTimeStamp());
+        jsonObject.put("timestamp", "2019-07-29T09:12:33.001Z");
         jsonObject.put("thread",event.getThreadName());
         jsonObject.put("message", event.getMessage());
+        jsonObject.put("logger", event.getLogger());
 
         String jsonString = jsonObject.toString();
 
