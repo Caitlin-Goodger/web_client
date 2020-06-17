@@ -16,7 +16,6 @@ import java.net.URI;
 import java.util.Objects;
 
 public class LogMonitor {
-    private String logServiceURL = "http://localhost:8080/resthome4logs/logs";
 
     public static void main (String[] args) {
         JFrame frame = logMonitorCreateGUI();
@@ -40,27 +39,27 @@ public class LogMonitor {
         panel.setLayout(null);
 
         JLabel labelLevel = new JLabel("min level:");
-        labelLevel.setBounds(10, 25, 80, 25);
+        labelLevel.setBounds(20, 20, 80, 25);
         panel.add(labelLevel);
 
         String[] levels = {"ALL","TRACE", "DEBUG", "INFO", "WARN", "ERROR", "FATAL", "OFF"};
         JComboBox<String> comboBox = new JComboBox<>(levels);
-        comboBox.setBounds(80, 25, 80, 25);
+        comboBox.setBounds(90, 20, 80, 25);
         panel.add(comboBox);
 
 
         JLabel labelLimit = new JLabel("limit:");
-        labelLimit.setBounds(180, 25, 80, 25);
+        labelLimit.setBounds(190, 20, 80, 25);
         panel.add(labelLimit);
 
         JTextField textLimit = new JTextField(20);
-        textLimit.setBounds(220, 25, 80, 25);
+        textLimit.setBounds(230, 20, 80, 25);
         textLimit.setText("100");
         textLimit.setHorizontalAlignment(0);
         panel.add(textLimit);
 
         JButton fetchData = new JButton("FETCH DATA");
-        fetchData.setBounds(320,25,150,25);
+        fetchData.setBounds(330,20,150,25);
         fetchData.addActionListener(actionEvent -> {
             String level = comboBox.getSelectedItem().toString();
             String limit = textLimit.getText();
@@ -83,7 +82,8 @@ public class LogMonitor {
         JTable dataTable = new JTable(model);
         dataTable.setEnabled(false);
         JScrollPane scrollPane = new JScrollPane(dataTable);
-        scrollPane.setBounds(10, 60, x - 40, y);
+        scrollPane.setBounds(20, 60, x - 40, y);
+        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         panel.add(scrollPane);
 
         return frame;
